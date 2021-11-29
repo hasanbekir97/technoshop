@@ -122,19 +122,19 @@ class Brand extends Controller
             Products::where('id', $product_Id)
                 ->delete();
 
-            ProductUrls::where('product_Id', $product_Id)
+            ProductUrls::where('product_id', $product_Id)
                 ->delete();
 
-            ProductImages::where('product_Id', $product_Id)
+            ProductImages::where('product_id', $product_Id)
                 ->delete();
 
-            ProductReviews::where('product_Id', $product_Id)
+            ProductReviews::where('product_id', $product_Id)
                 ->delete();
 
-            Cart::where('product_Id', $product_Id)
+            Cart::where('product_id', $product_Id)
                 ->delete();
 
-            Favorite::where('product_Id', $product_Id)
+            Favorite::where('product_id', $product_Id)
                 ->delete();
 
         }

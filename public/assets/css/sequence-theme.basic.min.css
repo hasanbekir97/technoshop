@@ -1,0 +1,1 @@
+body:before{white-space:pre;font-family:monospace;content:"Error: File to import not found or unreadable: partials/mixins.\A         on line 2 of sequence-theme.basic.scss\A \A 1: \A 2: @import \"partials/mixins\";\A 3: \A 4: body,\A 5: html,\A 6: .seq {\A 7:   /* Uncomment to make the theme full-screen */"}

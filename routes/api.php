@@ -38,9 +38,5 @@ Route::group(['middleware' => 'authApi'], function () {
     Route::put('categories/{category}', [CategoryApi::class, "update"]);
     Route::delete('categories/{category}', [CategoryApi::class, "delete"]);
 
-    //Api processes for order
-    /*Route::get('orders', [OrderApi::class, "index"]);
-    Route::get('orders/{order}', [OrderApi::class, "show"]);*/
-
 });
 

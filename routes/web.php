@@ -132,8 +132,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
 });
 
-Route::post('ajax/generateApiKey', [Api::class, "generateApiKey"])->middleware('isEmailVerified');
-Route::post('ajax/showApiKey', [Api::class, "showApiKey"])->middleware('isEmailVerified');
+//api processes
+Route::middleware(['isEmailVerified'])->group(function () {
+
+    Route::post('ajax/generateApiKey', [Api::class, "generateApiKey"]);
+    Route::post('ajax/showApiKey', [Api::class, "showApiKey"]);
+
+});
 
 //contact processes
 Route::post('ajax/contactFormSubmit', [Contacts::class, 'contactFormSubmit']);

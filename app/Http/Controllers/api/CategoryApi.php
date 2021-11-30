@@ -2,35 +2,35 @@
 
 namespace App\Http\Controllers\api;
 
-use App\Http\Controllers\Controller;
-use App\Models\Brands;
+use App\Models\Categories;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
-class BrandApi extends Controller
+class CategoryApi extends Controller
 {
     public function index(){
-        $data = Brands::all();
+        $data = Categories::all();
 
         return response()->json($data);
     }
     public function show($id){
-        $data = Brands::find($id);
+        $data = Categories::find($id);
 
         return response()->json($data);
     }
     public function store(Request $request){
-        $data = Brands::create($request->all());
+        $data = Categories::create($request->all());
 
         return response()->json($data);
     }
     public function update(Request $request, $id){
-        $brands = Brands::findOrFail($id);
+        $brands = Categories::findOrFail($id);
         $brands->update($request->all());
 
         return response()->json($brands);
     }
     public function delete(Request $request, $id){
-        $brands = Brands::findOrFail($id);
+        $brands = Categories::findOrFail($id);
         $brands->delete();
 
         return response()->json(204);

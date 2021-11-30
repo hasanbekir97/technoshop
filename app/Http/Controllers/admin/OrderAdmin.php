@@ -66,14 +66,14 @@ class OrderAdmin extends Controller
     }
     public function orderDetail($id){
         $userInformation = Orders::selectRaw('users.name, users.email, user_informations.phone, user_informations.country, user_informations.city,
-                                    user_informations.county, user_informations.address, orders.order_code, orders.created_at, orders.status')
+                                            user_informations.county, user_informations.address, orders.order_code, orders.created_at, orders.status')
                                     ->where('orders.id', $id)
                                     ->join('user_informations', 'orders.user_id', '=', 'user_informations.user_id')
                                     ->join('users', 'orders.user_id', '=', 'users.id')
                                     ->get();
 
         $orderInformation = Orders::selectRaw('users.name, users.email, order_informations.phone, order_informations.country, order_informations.city,
-                                    order_informations.county, order_informations.address')
+                                                order_informations.county, order_informations.address')
                                     ->where('orders.id', $id)
                                     ->join('order_informations', 'orders.id', '=', 'order_informations.order_id')
                                     ->join('users', 'orders.user_id', '=', 'users.id')

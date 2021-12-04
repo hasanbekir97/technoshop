@@ -6,7 +6,7 @@ use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Contact;
-use App\Models\Admins;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Mail;
 
 class Contacts extends Controller
@@ -65,7 +65,7 @@ class Contacts extends Controller
         $contact->message = $message;
         $contact->save();
 
-        $emailAdmin = Admins::select('email')
+        $emailAdmin = Admin::select('email')
                             ->get();
 
         $details = [

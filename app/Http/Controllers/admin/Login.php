@@ -3,10 +3,11 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-use App\Models\Admins;
+use App\Models\Admin;
 
 class Login extends Controller
 {
@@ -38,12 +39,12 @@ class Login extends Controller
         $email = $request->email;
         $password = $request->password;
 
-        $admin = Admins::get();
+        $admin = Admin::get();
 
         $admin_email = $admin[0]->email;
         $admin_password = $admin[0]->password;
 
-        if($email != $admin_email || $password != $admin_password){
+        if($email != $admin_email || Hash::check($password, $admin_password) === false){
             return redirect()->back()->with('message','You entered the information incorrectly. Please try again.');
         }else{
             Session::put('AuthAdmin', true);

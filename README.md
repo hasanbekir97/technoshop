@@ -35,14 +35,14 @@ It is based Business-to-Consumer (B2C).
 
 ##
 
-    ***_**You will seed the database using the seeder classes after run migrations.**_
+    You will seed the database using the seeder classes after run migrations.
 
 ##
 
 **You will login to admin panel using user information that is below shown after you seed the database using the seeder classes.**
 
-    - E-mail: admin@admin.com
-    - Password: admin.123
+    E-mail: admin@admin.com
+    Password: admin.123
 
 ##
 

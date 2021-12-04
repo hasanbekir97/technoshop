@@ -13,7 +13,7 @@ use App\Models\Products;
 use App\Models\Orders;
 use App\Models\OrderProducts;
 use App\Models\OrderInformations;
-use App\Models\Admins;
+use App\Models\Admin;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 
@@ -201,7 +201,7 @@ class Order extends Controller
             //move to orders the products that is in cart and these products are deleted from cart.(end)
 
 
-            $emailAdmin = Admins::select('email')
+            $emailAdmin = Admin::select('email')
                 ->get();
 
             $orderProducts = OrderProducts::selectRaw('product_urls.name, products.sku, order_products.unit_price,

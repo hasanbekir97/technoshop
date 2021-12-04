@@ -67,7 +67,7 @@ class AllProduct extends Controller
             }
 
             //search query
-            $search_in_key = array('products.brand', 'products.category', 'product_urls.name', 'product_urls.description', 'product_urls.detail');
+            $search_in_key = array('products.brand', 'products.cat_id', 'product_urls.name', 'product_urls.description', 'product_urls.detail');
             $counter = 0;
             $productSearches = products::query()
                                         ->selectRaw('products.id as product_id2');
@@ -93,9 +93,9 @@ class AllProduct extends Controller
 
                 foreach ($search_in_key as $row) {
                     if ($counter === 0)
-                        $productSearches = $productSearches->where($row, 'like', '%' . $search_word . '%');
+                        $productSearches = $productSearches->where($row, 'ILIKE', '%' . $search_word . '%');
                     else
-                        $productSearches = $productSearches->orWhere($row, 'like', '%' . $search_word . '%');
+                        $productSearches = $productSearches->orWhere($row, 'ILIKE', '%' . $search_word . '%');
 
                     $counter++;
                 }

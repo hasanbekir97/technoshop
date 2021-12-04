@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\api\BrandApi;
 use App\Http\Controllers\api\CategoryApi;
+use App\Http\Controllers\api\OrderApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,13 +17,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});*/
 
-
-
-Route::group(['middleware' => 'authApi'], function () {
+Route::group(['middleware' => 'auth:api'], function () {
 
     //Api processes for brands
     Route::get('brands', [BrandApi::class, "index"]);
@@ -38,5 +34,8 @@ Route::group(['middleware' => 'authApi'], function () {
     Route::put('categories/{category}', [CategoryApi::class, "update"]);
     Route::delete('categories/{category}', [CategoryApi::class, "delete"]);
 
-});
+    //Api processes for orders
+    Route::get('orders', [OrderApi::class, "index"]);
+    Route::get('orders/{order}', [OrderApi::class, "show"]);
 
+});

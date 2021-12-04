@@ -26,25 +26,23 @@ It is based Business-to-Consumer (B2C).
 
 **Admin can do these functions.**
 
-- list, create, update, delete contact
-- filter according to group.
-- filter according to alphabetic.
-- search.
-- adding a group for contacts.
-- adding a profile photo for contact.
-- adding name, company, notes for contact.
-- adding one or more phones, emails and addresses for contact.
+- list, create, update, delete the products.
+- list, create, update, delete the brands.
+- list, create, update, delete the categories.
+- list, delete the users.
+- list, delete the contact messages.
+- list the orders and change order statuses of orders.
 
 ##
 
-***_**You will seed the database using the seeder classes after run migrations.**_
+    ***_**You will seed the database using the seeder classes after run migrations.**_
 
 ##
 
 **You will login to admin panel using user information that is below shown after you seed the database using the seeder classes.**
 
-- E-mail: admin@admin.com
-- Password: admin.123
+    - E-mail: admin@admin.com
+    - Password: admin.123
 
 ##
 

@@ -536,7 +536,7 @@ function reviewModal(productId){
             '                    <div class="modal-footer reviewFormModalFooter">\n' +
             '                        <button type="submit" id="reviewSaveButton" class="btn btn-secondary saveButton" disabled>'+saveButtonText+'</button>\n' +
             '                    </div>\n' +
-            '                </form \n' ;
+            '                </form> \n' ;
 
         setTimeout(function() {
             $('#reviewModal').html(modalHtml);

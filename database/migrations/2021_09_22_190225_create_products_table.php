@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('sku',255);
             $table->string('brand',255);
-            $table->integer('cat_id')->index;
+            $table->integer('cat_id')->index();
             $table->decimal('old_price',8,2);
             $table->integer('discount_rate');
             $table->decimal('price',8,2);

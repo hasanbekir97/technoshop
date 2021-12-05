@@ -45,7 +45,6 @@
 <script type="text/javascript" src="{{asset('assets/js/privateJs/showCartNumber.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/privateJs/ajaxLoader.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/ready.js')}}"></script>
-<script type="text/javascript" src="{{asset('assets/js/ready.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/privateJs/search.js')}}"></script>
 <script type="text/javascript" src="{{asset('assets/js/privateJs/category.js')}}"></script>
 

@@ -14,10 +14,7 @@ class OrderApi extends Controller
 {
     public function index(Request $request){
 
-        $userData = User::where('api_token', strval($request->api_key))
-            ->get('id');
-
-        $user_id = $userData[0]->id;
+        $user_id = Auth()->user()->id;
 
         // orders summary
         $orders = Orders::selectRaw('orders.id as order_id, orders.order_code, orders.total_price,
@@ -110,10 +107,7 @@ class OrderApi extends Controller
     }
     public function show(Request $request, $id){
 
-        $userData = User::where('api_token', strval($request->api_key))
-            ->get('id');
-
-        $user_id = $userData[0]->id;
+        $user_id = Auth()->user()->id;
 
         // orders summary
         $order = Orders::selectRaw('orders.id as order_id, orders.order_code, orders.total_price,

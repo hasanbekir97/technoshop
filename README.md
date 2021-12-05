@@ -44,6 +44,8 @@ It is based Business-to-Consumer (B2C).
     E-mail: admin@admin.com
     Password: admin.123
 
+**You should change admin information with your own email address. Because, orders information will be sent to your email when users order the prouducts that is their cart.** 
+
 ##
 
 **Techonologies that used in the project.**
